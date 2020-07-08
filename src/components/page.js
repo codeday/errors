@@ -33,7 +33,7 @@ export default function Page({ children, title, darkHeader }) {
   );
 }
 Page.propTypes = {
-  children: PropTypes.oneOf([PropTypes.element, PropTypes.arrayOf(PropTypes.element)]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)]).isRequired,
   title: PropTypes.string,
   darkHeader: PropTypes.bool,
 };
