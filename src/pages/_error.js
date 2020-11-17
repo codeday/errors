@@ -25,8 +25,3 @@ export default function Home() {
     </Page>
   );
 }
-
-export function getServerSideProps({ res }) {
-  res.statusCode = 503;
-  return { props: {} };
-}
