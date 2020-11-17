@@ -4,7 +4,6 @@ import Content from '@codeday/topo/Molecule/Content';
 import Image from '@codeday/topo/Atom/Image';
 import Box from '@codeday/topo/Atom/Box';
 import Page from '../components/page';
-import Status from '../components/status';
 
 export default function Home() {
   return (
@@ -21,9 +20,13 @@ export default function Home() {
             This most likely means something went wrong on our side. You can try refreshing in a few minutes and if that
             doesn&apos;t work, <Link href="mailto:team@codeday.org">contact us.</Link>
           </Text>
-          <Status />
         </Box>
       </Content>
     </Page>
   );
+}
+
+export function getServerSideProps({ res }) {
+  res.statusCode = 503;
+  return { props: {} };
 }
